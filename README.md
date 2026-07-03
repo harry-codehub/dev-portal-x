@@ -19,7 +19,7 @@ flowchart LR
 ```
 
 - **Crawl** — discover articles from 22 RSS feeds → Claude (Sonnet) summary, category & relevance score → keep relevance ≥ 50 → AI (Haiku) de-duplication → persist to Cosmos DB.
-- **Social posts** — select items scoring 85+ → Claude (Haiku) writes a short post per article (≤ 280 chars incl. the source link) → fan out to every configured platform (Bluesky, LinkedIn) → persist to the `text-posts` container.
+- **Social posts** — select items scoring 70+ → Claude (Haiku) writes a short post per article (≤ 280 chars incl. the source link) → fan out to every configured platform (Bluesky, LinkedIn) → persist to the `text-posts` container.
 - **Daily video** — pick the single highest-relevance story → Haiku script → validate (quality ≥ 70) → Creatomate render (solid background + Azure TTS voiceover with synced captions) → Azure Blob → publish to YouTube + LinkedIn → persist to `short-videos`.
 
 ## Quick start

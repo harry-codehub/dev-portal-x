@@ -8,7 +8,7 @@ using Microsoft.Extensions.Logging;
 namespace DevNews.Application.SocialPost.Queries;
 
 public record SelectSocialPostEligibleItemsQuery(
-    int MinRelevanceScore = 85,
+    int MinRelevanceScore = 70,
     int MaxItems = 5) : IRequest<ResultResponse<IReadOnlyList<SocialPostEligibleItem>>>;
 
 public class SelectSocialPostEligibleItemsHandler(

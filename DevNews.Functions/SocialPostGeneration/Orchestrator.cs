@@ -8,8 +8,6 @@ namespace DevNews.Functions.SocialPostGeneration;
 
 public class Orchestrator
 {
-    private const int MinItemsForSocialPosts = 3;
-
     [Function(nameof(SocialPostOrchestrator))]
     public async Task<SocialPostGenerationResult> SocialPostOrchestrator(
         [OrchestrationTrigger] TaskOrchestrationContext context)
@@ -36,14 +34,8 @@ public class Orchestrator
             return new SocialPostGenerationResult(0, 0, TimeSpan.Zero);
         }
 
-        if (eligibleItems.Count < MinItemsForSocialPosts)
-        {
-            logger.LogInformation("Not enough items for social posts ({Count} < {Min}), skipping",
-                eligibleItems.Count, MinItemsForSocialPosts);
-            return new SocialPostGenerationResult(eligibleItems.Count, 0, context.CurrentUtcDateTime - startTime);
-        }
-
-        // Step 2: For each article, generate (and validate) text, publish, and persist
+        // Step 2: For each eligible article, generate (and validate) text, publish, and persist.
+        // No minimum-count gate: the loop simply posts whatever qualified (0 items → no-op).
         var postsPublished = 0;
 
         foreach (var item in eligibleItems)
