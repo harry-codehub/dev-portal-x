@@ -4,7 +4,7 @@
 
 DevNews Backend is an Azure Functions app (.NET 10 isolated worker). It ingests RSS feeds, uses Anthropic Claude to summarize, categorize, score, and de-duplicate articles, and stores them in Cosmos DB. A daily [Durable Functions](https://learn.microsoft.com/azure/azure-functions/durable/) pipeline then publishes the top stories as short social posts (to every configured platform — Bluesky, LinkedIn) and renders a daily short-form video with Creatomate for YouTube and LinkedIn. A small public read API serves the curated news to the frontend.
 
-Part of the **DevNews** product, alongside the web frontend ([`dev-news-frontend`](https://github.com/Steinklo/dev-news-frontend)) and infrastructure-as-code ([`dev-news-iac`](https://github.com/Steinklo/dev-news-iac)).
+Part of the **DevNews** product, alongside the web frontend ([`dev-news-frontend`](https://github.com/harry-codehub/dev-portal-x-frontend)) and infrastructure-as-code ([`dev-news-iac`](https://github.com/harry-codehub/dev-portal-x-iac)).
 
 ## How it works
 
@@ -63,8 +63,8 @@ Set configuration in `local.settings.json` locally (gitignored) or in Azure App 
 
 ## Links
 
-- Frontend — [`dev-news-frontend`](https://github.com/Steinklo/dev-news-frontend) · live at [dev-news.dev](https://dev-news.dev)
-- Infrastructure — [`dev-news-iac`](https://github.com/Steinklo/dev-news-iac)
+- Frontend — [`dev-news-frontend`](https://github.com/harry-codehub/dev-portal-x-frontend) · live at [dev-news.dev](https://dev-news.dev)
+- Infrastructure — [`dev-news-iac`](https://github.com/harry-codehub/dev-portal-x-iac)
 - Dev API (example): `https://func-devnews-api-dev.azurewebsites.net/api/v1`
 
 ## Contributing

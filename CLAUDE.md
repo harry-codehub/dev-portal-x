@@ -55,4 +55,4 @@ Deploy is CI-only: push to `main` → dev; manual `workflow_dispatch` → prod. 
 ## Further context
 
 - `README.md` — pipeline overview, API table, configuration.
-- Siblings: [`dev-news-frontend`](https://github.com/Steinklo/dev-news-frontend), [`dev-news-iac`](https://github.com/Steinklo/dev-news-iac).
+- Siblings: [`dev-news-frontend`](https://github.com/harry-codehub/dev-portal-x-frontend), [`dev-news-iac`](https://github.com/harry-codehub/dev-portal-x-iac).
